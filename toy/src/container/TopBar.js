@@ -22,7 +22,7 @@ const styles = {
 };
 
 function TopBar(props) {
-  const { classes } = props;
+  const { classes, onPrev, onNext } = props;
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -31,9 +31,10 @@ function TopBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="title" color="inherit" className={classes.grow}>
-            News
+            Toy
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" onClick={onPrev}>上一页</Button>
+          <Button color="inherit" onClick={onNext}>下一页</Button>
         </Toolbar>
       </AppBar>
     </div>

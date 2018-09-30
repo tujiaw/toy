@@ -20,6 +20,10 @@ class BottomNav extends React.Component {
 
   handleChange = (event, value) => {
     this.setState({ value });
+    if (this.props.onClick) {
+      this.props.onClick(value);
+    }
+    console.log('bottom nav, index:' + value)
   };
 
   render() {
@@ -33,7 +37,7 @@ class BottomNav extends React.Component {
         showLabels
         className={classes.root}
       >
-        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+        <BottomNavigationAction label="文本笑话" icon={<RestoreIcon />} />
         <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
         <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
       </BottomNavigation>
