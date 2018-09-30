@@ -1,6 +1,7 @@
 import React from 'react';
 import TopBar from './container/TopBar'
 import BottomNav from './container/BottomNav'
+import TextJoke from './container/TextJoke'
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 
@@ -13,7 +14,7 @@ class App extends React.Component {
           <TopBar />
         </Grid>
         <Grid item xs={8} className={classes.content}>
-          <view>1111</view>
+          <TextJoke />
         </Grid>
         <Grid item xs={8}>
           <BottomNav />
