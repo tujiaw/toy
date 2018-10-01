@@ -47,7 +47,7 @@ class App extends React.Component {
     const { classes } = this.props;
     return (
       <Grid container className={classes.root} spacing={16} justify="center">
-        <Grid item xs={8} className={classes.main}>
+        <Grid item xs={4} className={classes.main}>
           <TopBar onPrev={this.onPrev} onNext={this.onNext} />
           { this.state.index === 0 && <TextJoke data={this.state.textjoke} /> }
           <BottomNav />
@@ -57,15 +57,18 @@ class App extends React.Component {
   }
 }
 
-const styles = {
+const styles = theme => ({
   root: {
     flexGrow: 1,
   },
   main: {
-    background:'#eee'
+    //border: '1px solid #eee',
+    background: '#555',
+    margin: 10,
+    borderRadius: 6
   },
   content: {
   },
-}
+})
 
 export default withStyles(styles)(App);

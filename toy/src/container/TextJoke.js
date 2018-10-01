@@ -27,7 +27,7 @@ class TextJoke extends React.Component {
                 <ListItem key={i}>
                   <ListItemText
                     primary={item.ct}
-                    secondary={item.text}
+                    secondary={item.text.replace(/[<br\/> | <br \/> | <p> | </p>]/g, '')}
                   />
                 </ListItem>
               )
@@ -45,7 +45,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   list: {
-    maxHeight: 500,
+    maxHeight: theme.breakpoints.values.sm,
     overflow: 'auto',
   },
 });
